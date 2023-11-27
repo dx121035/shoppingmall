@@ -1,0 +1,87 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">
+<br><br><br><br>
+
+<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="/" class="stext-109 cl8 hov-cl1 trans-04">
+				홈페이지
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+			
+			<a href="/user/readDetail" class="stext-109 cl8 hov-cl1 trans-04">
+				마이페이지
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				회원정보수정
+			</span>
+		</div>
+	</div>
+					<div class="container">
+						<!--  -->
+						<div class="p-t-40 m-b-60">
+							<h5 class="mtext-113 cl2 p-b-12">
+								[[${user.name}]]님 회원정보 수정
+							</h5>
+							
+							<p><img th:src="@{|https://bucket-va1rkc.s3.ap-northeast-2.amazonaws.com/${user.image}|}"/></p>
+							<br>
+
+							<form th:action="@{/user/update}" method="post" enctype="multipart/form-data">
+
+								<a>성함</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="name" th:value="${user.name}" readonly>
+								</div>
+
+								<a>아이디</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="username" th:value="${user.username}" readonly>
+								</div>
+								
+								<a>비밀번호</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="password" name="password">
+								</div>
+								
+								<a>휴대폰번호</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="tel" th:value="${user.tel}">
+								</div>
+								
+								<a>주소</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="addr" th:value="${user.addr}">
+								</div>
+								
+								<a>우편번호</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="postcode" th:value="${user.postcode}">
+								</div>
+								
+								<a>프로필사진</a>
+								<div class="bor19 size-218 m-b-30">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18 p-t-10" type="file" name="file">
+								</div>
+								
+								<input type="hidden" name="id" th:value="${user.id}">
+								<input type="hidden" name="image" th:value="${user.image}">
+								<input type="hidden" name="createDate" th:value="${user.createDate}">
+								<input type="hidden" name="role" th:value="${user.role}">
+
+								<button class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04" onclick="location.href='/user/update'">
+									수정하기
+								</button>
+							</form>
+
+						</div>
+					</div>
+					
+				</div>
+				

@@ -1,0 +1,103 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">
+	
+    <link href="/vendors/prism/prism-okaidia.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
+    <link href="/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
+    <link href="/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+    <script>
+      var phoenixIsRTL = window.config.config.phoenixIsRTL;
+      if (phoenixIsRTL) {
+        var linkDefault = document.getElementById('style-default');
+        var userLinkDefault = document.getElementById('user-style-default');
+        linkDefault.setAttribute('disabled', true);
+        userLinkDefault.setAttribute('disabled', true);
+        document.querySelector('html').setAttribute('dir', 'rtl');
+      } else {
+        var linkRTL = document.getElementById('style-rtl');
+        var userLinkRTL = document.getElementById('user-style-rtl');
+        linkRTL.setAttribute('disabled', true);
+        userLinkRTL.setAttribute('disabled', true);
+      }
+    </script>
+    <section class="bg0 p-t-62 p-b-60">
+    
+    <br>
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/images/bg-01.jpg');">
+		<h2 class="ltext-105 cl0 txt-center">
+			배송조회
+		</h2>
+	</section>	
+<br>
+<img src="/images/delivery_step.jpg" width="800px" style="margin-left: 23%;"/>
+	
+<div class="container">
+			<div class="col-md-12 col-lg-12 p-b-80">
+
+<br>
+<div id="tableExample3" data-list='{"valueNames":["category","title","writer"],"page":10,"pagination":true}'>
+  
+  <div class="table-responsive" >
+    <table class="table table table-sm fs-0 mb-0" >
+      <thead style="background-color: #333; color: white;">
+	 <tr>
+		<th class="narrow-column" style="text-align: center;">배송상태</th>
+        <th style="text-align: center;" data-sort="title">송장번호</th>
+        <th style="text-align: center;" data-sort="writer">주문상품</th>
+        <th style="text-align: center;">주문금액</th>
+        <th style="text-align: center;">처리일시</th>
+        
+    </tr>
+       
+      </thead>
+      <tbody class="list">
+      <tr th:block th:each="status:${delivery.statusList}">
+    <td class="title" style="text-align: center;">
+        <span th:switch="${status.step}">
+            <span th:case="1">입금확인</span>
+            <span th:case="2">상품준비</span>
+            <span th:case="3">배송시작</span>
+            <span th:case="4">배송 중</span>
+            <span th:case="5">배송완료</span>
+        </span>
+    </td>
+    <td class="title" style="text-align: center;">[[${status.sno}]]</td>
+    <td class="writer" style="text-align: center;">[[${delivery.allAbout}]]</td>
+    <td class="writer" style="text-align: center;">[[${delivery.total}]]원</td>
+    <td th:text="${#temporals.format(status.createDate, 'yyyy-MM-dd HH:mm')}" style="text-align: center;"> </td>
+</tr>
+       
+         </tbody>
+    </table>
+  </div>
+  
+</div>
+
+</div>
+</div>
+
+
+    <script src="/vendors/popper/popper.min.js"></script>
+    <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="/vendors/anchorjs/anchor.min.js"></script>
+    <script src="/vendors/is/is.min.js"></script>
+    <script src="/vendors/fontawesome/all.min.js"></script>
+    <script src="/vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
+    <script src="/vendors/feather-icons/feather.min.js"></script>
+    <script src="/vendors/dayjs/dayjs.min.js"></script>
+    <script src="/vendors/prism/prism.js"></script>
+    <script src="/assets/js/phoenix.js"></script>
+    <script src="/vendors/list.js/list.min.js"></script>
+
+</div>

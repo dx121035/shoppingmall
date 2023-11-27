@@ -1,0 +1,64 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">
+<br><br><br><br>
+
+<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="/" class="stext-109 cl8 hov-cl1 trans-04">
+				홈페이지
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				마이페이지
+			</span>
+		</div>
+	</div>
+					<div class="container">
+						<!--  -->
+						<div class="p-t-40 m-b-60">
+							<h5 class="mtext-113 cl2 p-b-30">
+								[[${user.name}]] 님 마이페이지
+							</h5>
+							<br>
+							<p><img th:src="@{|https://bucket-va1rkc.s3.ap-northeast-2.amazonaws.com/${user.image}|}" width="150px" height="150px" style="border-radius: 2%;"/></p>
+							<br>
+
+								<a>성함</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="name" th:value="${user.name}" readonly>
+								</div>
+
+								<a>아이디</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="username" th:value="${user.username}" readonly>
+								</div>
+								
+								<a>휴대폰번호</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="tel" th:value="${user.tel}" readonly>
+								</div>
+								
+								<a>주소</a>
+								<div class="bor19 size-218 m-b-20">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="addr" th:value="${user.addr}" readonly>
+								</div>
+								
+								<a>우편번호</a>
+								<div class="bor19 size-218 m-b-30">
+									<input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="postcode" th:value="${user.postcode}" readonly>
+								</div>
+
+								<button class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04" onclick="location.href='/user/update'">
+									회원정보수정
+								</button>
+
+						</div>
+					</div>
+					
+				</div>
+				
