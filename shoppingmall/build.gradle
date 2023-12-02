@@ -23,6 +23,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	
+	
 	// DB setting
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	runtimeOnly 'com.mysql:mysql-connector-j'
@@ -46,6 +47,9 @@ dependencies {
 	
 	// s3
 	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.529'
+	
+	
+	
 }
 
 tasks.named('test') {

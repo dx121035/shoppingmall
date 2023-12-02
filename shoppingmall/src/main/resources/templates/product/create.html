@@ -1,0 +1,95 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">
+<br><br><br><br>
+
+<section class="bg0 p-t-104 p-b-116">
+		<div class="container">
+			<div class="flex-w flex-tr">
+				<div class="container">
+				<div class="container">
+				<div class="container">
+				<div class="container">
+					<form th:action="@{/product/create}" method="post" enctype="multipart/form-data" class="row g-3 mb-6 d-flex justify-content-center">
+
+
+				<div class="col-sm-12 col-md-16">
+					<div class="form-floating">
+						<input class="form-control" id="floatingInputGrid" type="text" placeholder="Product Name"
+							name="name" />
+						<br>
+					</div>
+				</div>
+
+
+
+				<div class="col-sm-6 col-md-4">
+					<div class="form-floating">
+						<input class="form-control" id="floatingInputGrid" type="text" placeholder="Product Id"
+							name="productid" />
+						<br>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="form-floating">
+						<input class="form-control" id="floatingInputGrid" type="text" placeholder="Quantity"
+							name="quantity" />
+						<br>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="form-floating">
+						<input class="form-control" id="floatingInputGrid" type="text" placeholder="Price"
+							name="price" />
+						<br>
+					</div>
+				</div>
+
+
+
+
+
+
+
+				<div class="col-12 gy-6">
+					<div class="form-floating">
+						<input class="form-control" id="floatingInputGrid" type="text" placeholder="About" name="about"/>
+						<br>
+					</div>
+				</div>
+
+
+<input type="file" name="filename">
+
+
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<div class="container">
+		<div class="container">
+		<div class="col-12 gy-6">
+			<div class="row g-3 justify-content-end">
+				<div class="col-auto">
+					<button class="btn btn-phoenix-primary px-5">Cancel</button>
+				</div>
+				<div class="col-auto">
+					<button class="btn btn-primary px-5 px-sm-15">Create Project</button>
+				</div>
+			</div>
+		
+		
+		</form>
+				</div>
+
+			</div>
+		</div>
+	</section>	
+</div>
+
+
+
