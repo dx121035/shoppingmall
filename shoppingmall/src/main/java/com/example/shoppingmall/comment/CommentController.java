@@ -24,11 +24,8 @@ public class CommentController {
              
             String username = principal.getName();
 
-            commentService.sendSimpleMessage(
-                  "dlwognsek55@naver.com",
-                  "공지게시판에" + username + "이 댓글을 작성하였습니다",
-                  "작성하신 내용 :" + content
-              );
+
+              
 
         return "redirect:/notice/readDetail?id=" + id;
     }

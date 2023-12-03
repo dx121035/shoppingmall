@@ -1,10 +1,9 @@
 package com.example.shoppingmall.comment;
 
-public interface CommentService {
+public interface CocommentService {
     
     void create(Integer id, String content);
-
-    Comment readDetail(Integer id);
     
-	
-}
+    
+
+    }

@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">
+<br><br><br><br>
+
+<section class="bg0 p-t-104 p-b-116">
+		<div class="container">
+			<div class="flex-w flex-tr">
+				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+					<form action="/product/update" method="post" enctype="multipart/form-data">
+						<h4 class="mtext-105 cl2 txt-center p-b-30">
+							제품등록
+						</h4>
+						<p class="stext-113 cl6 bold-text">제품 ID</p>
+						<div class="bor8 m-b-20">
+							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="productId" placeholder="제품ID를 입력하세요" th:value="${details.productId}">
+						</div>
+						<p class="stext-113 cl6 bold-text">제품명</p>
+						<div class="bor8 m-b-20">
+							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="name" placeholder="제품명을 입력하세요" th:value="${details.name}">
+						</div>
+						<p class="stext-113 cl6 bold-text">제품설명</p>					
+						<div class="bor8 m-b-30">
+							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="about" placeholder="제품설명을 입력하세요" th:value="${details.about}">[[${details.about}]]</textarea>
+						</div>
+						<p class="stext-113 cl6 bold-text">가격</p>
+						<div class="bor8 m-b-20">
+							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="price" placeholder="가격을 입력하세요" th:value="${details.price}">
+						</div>
+						<p class="stext-113 cl6 bold-text">사진등록</p>
+						<br>
+						
+						<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="file" name="filename">
+						
+						<input type="hidden" name="id" th:value="${details.id}"></p>
+						<input type="hidden" name="imageName" th:value="${details.imageName}"></p>
+						<input type="hidden" name="createDate" th:value="${details.createDate}"></p>
+
+						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+							등록
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>	
+</div>

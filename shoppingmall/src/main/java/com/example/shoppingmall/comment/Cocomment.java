@@ -1,24 +1,18 @@
 package com.example.shoppingmall.comment;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 
-import com.example.shoppingmall.notice.Notice;
-
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
 @Data
-public class Comment {
+public class Cocomment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,10 +25,8 @@ public class Comment {
 	private String username;
 	
 	@ManyToOne
-	private Notice notice;
+	private Comment comment;
 	
-	@OneToMany(mappedBy = "comment", cascade = CascadeType.REMOVE)
-	private List<Cocomment> cocommentList;
 	
 
 }

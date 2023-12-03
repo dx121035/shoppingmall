@@ -1,0 +1,139 @@
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout=http:www.ultraq.net.nz/thymeleaf/layout
+	  layout:decorate="~{fragments/layout1}">
+
+<div layout:fragment="content">	
+	<br><br><br><br>
+	
+	
+		
+
+	<!-- Product Detail -->
+	<section class="sec-product-detail bg0 p-t-65 p-b-60">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-lg-7 p-b-30">
+					<div class="p-l-25 p-r-30 p-lr-0-lg">
+						<div class="wrap-slick3 flex-sb flex-w">
+							<div class="wrap-slick3-dots"></div>
+							<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
+
+							<div class="gallery-lb">
+								<div class="item-slick3" >
+									<div class="wrap-pic-w pos-relative">
+										<img th:src="@{|https://seulabucket.s3.ap-northeast-2.amazonaws.com/${details.imageName}|}" height="500px"  alt="IMG-PRODUCT">
+									</div>
+								</div>
+
+								
+
+								
+							</div>
+						</div>
+					</div>
+				</div>
+					
+				<div class="col-md-6 col-lg-5 p-b-30">
+					<div class="p-r-50 p-t-5 p-lr-0-lg">
+						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+							[[${details.name}]]
+						</h4>
+
+						<span class="mtext-106 cl2">
+							&#8361; [[${details.price}]]
+						</span>
+
+						<p class="stext-102 cl3 p-t-23">
+							[[${details.productId}]]
+						</p>
+						
+						<!--  -->
+						<div class="p-t-33">
+							
+
+							<div class="flex-w flex-r-m p-b-10">
+								<div class="size-204 flex-w flex-m respon6-next">
+								
+									
+									
+									<form th:action="@{|/item/create?id=${details.id}|}" method="post">
+										
+ 									<input type="hidden" name="productId" th:value="${details.productId}">
+									<input type="hidden" name="name" th:value="${details.name}">
+									<input type="hidden" name="price" th:value="${details.price}">
+									<input type="submit" value="장바구니에 담기" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+									</form>
+																		
+								</div>
+							</div>	
+						</div>
+						
+						
+						
+						
+					
+
+						
+						<div class="flex-w flex-t p-t-16">
+							<div class="flex-w size-217">
+							<a th:href="@{|/product/delete?id=${details.id}|}" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">삭제</a>
+							<a th:href="@{|/product/update?id=${details.id}|}" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">수정</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+				
+				<div class="tab01">
+					
+					<ul class="nav nav-tabs" role="tablist">
+						<li class="nav-item p-b-10">
+							<h4>제품설명</h4>
+						</li>
+
+
+
+	
+					</ul>
+
+					
+					<div class="tab-content p-t-43">
+						
+						<div class="tab-pane fade show active" id="description" role="tabpanel">
+							<div class="how-pos2 p-lr-15-md">
+								<p class="stext-102 cl6">
+									[[${details.about}]]
+								</p>
+							</div>
+						</div>
+
+						<div class="tab-pane fade" id="reviews" role="tabpanel">
+							<div class="row">
+								<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+									
+				
+					
+			
+		
+	
+											
+											
+											
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+
+
+
+			
+		</div>
+	</section>
+
+	

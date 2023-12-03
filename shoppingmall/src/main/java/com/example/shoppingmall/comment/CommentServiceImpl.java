@@ -28,7 +28,7 @@ public class CommentServiceImpl implements CommentService{
     @Override
     public void create(Integer id, String content) {
     	
-    	
+    	//현재 로그인 하여 사용중인 사람의 정보 추출
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	String username = auth.getName();									
 
@@ -50,16 +50,7 @@ public class CommentServiceImpl implements CommentService{
 		return oc.get();
 	}
    	
-   	public void sendSimpleMessage(
-		      String to, String subject, String text) {
-		        
-		        SimpleMailMessage message = new SimpleMailMessage(); 
-		        message.setFrom("dlwognsek55@naver.com"); // 실제 네이버 이메일 주소
-		        message.setTo(to); 
-		        message.setSubject(subject); 
-		        message.setText(text);
-		        emailSender.send(message);
-		    }
+ 
    	
    	
 
