@@ -187,18 +187,17 @@ public class UserServiceImpl implements UserService {
 			file2.delete();
 			
 			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-			
 			user.setPassword(passwordEncoder.encode(user.getPassword()));
 			user.setImage(filename);
 			
 			userRepository.save(user);
-		}
+		} else {
 		
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
 		userRepository.save(user);
+		}
 	}
 
 	@Override
